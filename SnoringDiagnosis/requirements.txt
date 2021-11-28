@@ -1,0 +1,8 @@
+pyAudioAnalysis
+numpy
+scipy
+matplotlib
+tqdm
+eyed3
+pydub
+plotly
