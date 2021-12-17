@@ -1,0 +1,105 @@
+python3 pyAudioAnalysis/pyAudioAnalysis/audioAnalysis.py trainClassifier -i test/扁桃体肥大/ test/腺样体伴扁桃体肥大 test/腺样体肥大 --method svm -o model/svmSM
+python3 pyAudioAnalysis/pyAudioAnalysis/audioAnalysis.py trainClassifier -i test/扁桃体肥大/ test/腺样体伴扁桃体肥大 test/腺样体肥大 --method svm_rbf -o model/svm_rbf
+python3 pyAudioAnalysis/pyAudioAnalysis/audioAnalysis.py trainClassifier -i test/扁桃体肥大/ test/腺样体伴扁桃体肥大 test/腺样体肥大 --method knn -o model/knn
+python3 pyAudioAnalysis/pyAudioAnalysis/audioAnalysis.py trainClassifier -i test/扁桃体肥大/ test/腺样体伴扁桃体肥大 test/腺样体肥大 --method extratrees -o model/extratrees
+python3 pyAudioAnalysis/pyAudioAnalysis/audioAnalysis.py trainClassifier -i test/扁桃体肥大/ test/腺样体伴扁桃体肥大 test/腺样体肥大 --method gradientboosting -o model/gradientboosting
+python3 pyAudioAnalysis/pyAudioAnalysis/audioAnalysis.py trainClassifier -i test/扁桃体肥大/ test/腺样体伴扁桃体肥大 test/腺样体肥大 --method randomforest -o model/randomforest
+
+
+python3 pyAudioAnalysis/pyAudioAnalysis/audioAnalysis.py trainClassifier -i test/腺样体伴扁桃体肥大 test/腺样体肥大 --method gradientboosting -o model/gradientboosting
+
+python3 pyAudioAnalysis/pyAudioAnalysis/audioAnalysis.py classifyFolder -i test/腺样体肥大/ --model gradientboosting --classifier model/gradientboosting
+python3 pyAudioAnalysis/pyAudioAnalysis/audioAnalysis.py classifyFolder -i test/腺样体肥大/ --model gradientboosting --classifier model/gradientboosting --details
+python3 pyAudioAnalysis/pyAudioAnalysis/audioAnalysis.py classifyFolder -i test/扁桃体肥大/ --model gradientboosting --classifier model/gradientboosting --details
+python3 pyAudioAnalysis/pyAudioAnalysis/audioAnalysis.py classifyFolder -i test/腺样体伴扁桃体肥大/ --model gradientboosting --classifier model/gradientboosting --details  (also outputs the result of each singe WAV file)
+
+
+time python3 pyAudioAnalysis/pyAudioAnalysis/audioAnalysis.py trainClassifier -i test_train/腺样体伴扁桃体肥大 test_train/腺样体肥大 --method knn -o model/knn
+time python3 pyAudioAnalysis/pyAudioAnalysis/audioAnalysis.py classifyFolder -i test_classify/腺样体伴扁桃体肥大/ --model svm --classifier model/svm --details
+time python3 pyAudioAnalysis/pyAudioAnalysis/audioAnalysis.py classifyFolder -i test_classify/腺样体肥大/ --model gradientboosting --classifier model/gradientboosting --details
+
+model  腺样体伴扁桃体肥大(T) 腺样体肥大(F); 腺样体伴扁桃体肥大(F) 腺样体肥大(T)
+svm 17 5; 4 5
+test_classify/腺样体肥大/10.mp3.wav     腺样体伴扁桃体肥大
+test_classify/腺样体肥大/4.m4a.wav      腺样体肥大
+test_classify/腺样体肥大/5.m4a.wav      腺样体肥大
+test_classify/腺样体肥大/6（1）.mp4.wav 腺样体肥大
+test_classify/腺样体肥大/6（2）.mp4.wav 腺样体肥大
+test_classify/腺样体肥大/7(1).m4a.wav   腺样体伴扁桃体肥大
+test_classify/腺样体肥大/7(2).m4a.wav   腺样体伴扁桃体肥大
+test_classify/腺样体肥大/8.mp3.wav      腺样体肥大
+test_classify/腺样体肥大/9.mp3.wav      腺样体伴扁桃体肥大
+腺样体伴扁桃体肥大                      4
+腺样体肥大                              5
+
+svm_rbf 18 4; 4 5
+test_classify/腺样体肥大/10.mp3.wav     腺样体伴扁桃体肥大
+test_classify/腺样体肥大/4.m4a.wav      腺样体肥大
+test_classify/腺样体肥大/5.m4a.wav      腺样体肥大
+test_classify/腺样体肥大/6（1）.mp4.wav 腺样体肥大
+test_classify/腺样体肥大/6（2）.mp4.wav 腺样体肥大
+test_classify/腺样体肥大/7(1).m4a.wav   腺样体伴扁桃体肥大
+test_classify/腺样体肥大/7(2).m4a.wav   腺样体伴扁桃体肥大
+test_classify/腺样体肥大/8.mp3.wav      腺样体肥大
+test_classify/腺样体肥大/9.mp3.wav      腺样体伴扁桃体肥大
+腺样体伴扁桃体肥大                      4
+腺样体肥大                              5
+
+knn 17 5; 4 5
+test_classify/腺样体肥大/10.mp3.wav     腺样体伴扁桃体肥大
+test_classify/腺样体肥大/4.m4a.wav      腺样体肥大
+test_classify/腺样体肥大/5.m4a.wav      腺样体肥大
+test_classify/腺样体肥大/6（1）.mp4.wav 腺样体肥大
+test_classify/腺样体肥大/6（2）.mp4.wav 腺样体肥大
+test_classify/腺样体肥大/7(1).m4a.wav   腺样体肥大
+test_classify/腺样体肥大/7(2).m4a.wav   腺样体伴扁桃体肥大
+test_classify/腺样体肥大/8.mp3.wav      腺样体伴扁桃体肥大
+test_classify/腺样体肥大/9.mp3.wav      腺样体伴扁桃体肥大
+腺样体伴扁桃体肥大                      4
+腺样体肥大                              5
+
+extratrees  19 3; 5 4
+test_classify/腺样体肥大/10.mp3.wav     腺样体伴扁桃体肥大
+test_classify/腺样体肥大/4.m4a.wav      腺样体肥大
+test_classify/腺样体肥大/5.m4a.wav      腺样体肥大
+test_classify/腺样体肥大/6（1）.mp4.wav 腺样体肥大
+test_classify/腺样体肥大/6（2）.mp4.wav 腺样体肥大
+test_classify/腺样体肥大/7(1).m4a.wav   腺样体伴扁桃体肥大
+test_classify/腺样体肥大/7(2).m4a.wav   腺样体伴扁桃体肥大
+test_classify/腺样体肥大/8.mp3.wav      腺样体伴扁桃体肥大
+test_classify/腺样体肥大/9.mp3.wav      腺样体伴扁桃体肥大
+
+gradientboosting  16 6; 3 6
+test_classify/腺样体肥大/10.mp3.wav     腺样体伴扁桃体肥大
+test_classify/腺样体肥大/4.m4a.wav      腺样体肥大
+test_classify/腺样体肥大/5.m4a.wav      腺样体肥大
+test_classify/腺样体肥大/6（1）.mp4.wav 腺样体肥大
+test_classify/腺样体肥大/6（2）.mp4.wav 腺样体肥大
+test_classify/腺样体肥大/7(1).m4a.wav   腺样体肥大
+test_classify/腺样体肥大/7(2).m4a.wav   腺样体伴扁桃体肥大
+test_classify/腺样体肥大/8.mp3.wav      腺样体肥大
+test_classify/腺样体肥大/9.mp3.wav      腺样体伴扁桃体肥大
+腺样体伴扁桃体肥大                      3
+腺样体肥大                              6
+
+
+randomforest  22 0; 5 4
+test_classify/腺样体肥大/10.mp3.wav     腺样体伴扁桃体肥大
+test_classify/腺样体肥大/4.m4a.wav      腺样体肥大
+test_classify/腺样体肥大/5.m4a.wav      腺样体肥大
+test_classify/腺样体肥大/6（1）.mp4.wav 腺样体肥大
+test_classify/腺样体肥大/6（2）.mp4.wav 腺样体肥大
+test_classify/腺样体肥大/7(1).m4a.wav   腺样体伴扁桃体肥大
+test_classify/腺样体肥大/7(2).m4a.wav   腺样体伴扁桃体肥大
+test_classify/腺样体肥大/8.mp3.wav      腺样体伴扁桃体肥大
+test_classify/腺样体肥大/9.mp3.wav      腺样体伴扁桃体肥大
+
+
+time python3 pyAudioAnalysis/pyAudioAnalysis/audioAnalysis.py classifyFolder -i test/扁桃体肥大/ --model svm --classifier model/svm --details
+model
+svm 腺样体伴扁桃体肥大
+svm_rbf 腺样体伴扁桃体肥大
+knn 腺样体伴扁桃体肥大
+extratrees  腺样体伴扁桃体肥大
+gradientboosting  腺样体伴扁桃体肥大
+randomforest  腺样体伴扁桃体肥大
