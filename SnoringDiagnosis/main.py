@@ -86,7 +86,12 @@ def audio_features(file_path, prefix):
     # plt.close()
     for i, name in enumerate(fn):
         plt.subplot(2,1,1); plt.plot(f[i,:]);plt.xlabel('Frame no');plt.ylabel(name)
-        plt.savefig(wav_path+'.'+name+'.jpg')
+
+        feature_pic_folder = "features/"+name
+        if not os.path.exists(feature_pic_folder):
+            os.makedirs(feature_pic_folder)
+        plt.savefig(feature_pic_folder+'/'+wav_path.replace('/','_')+'.jpg')
+        # plt.savefig(wav_path+'.'+name+'.jpg')
         # plt.show()
         plt.close()
 
