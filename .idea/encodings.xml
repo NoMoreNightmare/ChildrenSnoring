@@ -7,6 +7,7 @@
     <file url="file://$PROJECT_DIR$/Sonic_Visualiser/feature-SVM/dataset.csv" charset="GBK" />
     <file url="file://$PROJECT_DIR$/Sonic_Visualiser/feature-SVM/duration_limit" charset="GBK" />
     <file url="file://$PROJECT_DIR$/Sonic_Visualiser/feature-SVM/property.cfg" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/Sonic_Visualiser/feature-SVM/test" charset="GBK" />
     <file url="file://$PROJECT_DIR$/Sonic_Visualiser/feature_model_test.py" charset="GBK" />
   </component>
 </project>
