@@ -44,7 +44,7 @@ def File2WAV(file_path, wav_path):
         print(file_path, ext)
 
 def audio_features(file_path, prefix):
-    out_folder = 'test'
+    out_folder = 'feature'
     print(file_path[len(prefix):])
 
     wav_path = out_folder+'/'+file_path[len(prefix):]+'.wav'
