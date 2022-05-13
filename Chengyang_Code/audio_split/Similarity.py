@@ -89,9 +89,11 @@ def read_all_file(record_files, clf):
 
 
 def attempt():
+    # 这行代码已经不用了
     # X_train,x_test,Y_train,y_test = model_create("property.cfg", "split_audio")
 
 
+    # 下面的代码块是尝试用fs，signals和rmse进行分类的尝试
     # fs_list, signals, rmse_list = read_wav_files("duration_limit/")
     # rmse_list = numpy.reshape(rmse_list, [-1, 1])
     #
@@ -112,7 +114,7 @@ def attempt():
     # read_all_file1("duration_limit/")
 
 
-
+    # 下面的代码块是用原来方法（Chengyang_Code.feature.feature.py）提取的特征进行分类的尝试
     dataset = load_my_dataset()
 
     X = dataset.data[:500]
@@ -124,6 +126,8 @@ def attempt():
     x_remain=x_remain[:,1:5]
 
     X=X[:,1:5]
+
+    # 尝试解决数据样本不平衡
     ros=SMOTE()
     X,y=ros.fit_resample(X,y)
 
